@@ -62,6 +62,10 @@
   --radius-2xl: 1rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-surface);
   color: var(--color-on-surface);
