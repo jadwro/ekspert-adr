@@ -19,7 +19,7 @@ export default function OMnieSection() {
               className='object-cover scale-100 hover:scale-105 transition-transform duration-700'
             />
           </div>
-          <div className='absolute -bottom-6 -right-6 p-8 bg-secondary text-white rounded-lg shadow-xl hidden md:block'>
+          <div className='absolute -bottom-6 -right-6 p-6 bg-secondary text-white rounded-lg shadow-xl'>
             <p className='text-4xl font-black font-headline'>10+</p>
             <p className='text-xs font-label uppercase tracking-widest'>
               Lat Doświadczenia
