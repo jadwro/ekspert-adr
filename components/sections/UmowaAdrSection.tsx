@@ -6,7 +6,7 @@ export default function UmowaAdrSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           {/* Sticky heading */}
-          <div className="lg:col-span-4 sticky top-32">
+          <div className="lg:col-span-4 lg:sticky lg:top-32">
             <h2 className="text-4xl font-black font-headline text-primary tracking-tighter mb-6 uppercase">
               Umowa ADR
             </h2>
