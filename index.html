@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ADR EXPERT - Waldemar Stolarski | Doradztwo DGSA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#aac0cc",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#304e6e",
+                        "on-primary-fixed": "#001d35",
+                        "on-background": "#191c1e",
+                        "surface": "#f8f9fb",
+                        "primary-fixed-dim": "#abc9ef",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#354a53",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#071e27",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed-variant": "#773200",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8f9fb",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#abc9ef",
+                        "inverse-surface": "#2d3133",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary": "#9c4400",
+                        "outline-variant": "#c3c6d4",
+                        "on-primary-container": "#a1bfe4",
+                        "primary-fixed": "#d1e4ff",
+                        "primary": "#163756",
+                        "outline": "#737783",
+                        "secondary-fixed-dim": "#ffb68f",
+                        "tertiary-fixed-dim": "#b4cad6",
+                        "secondary-fixed": "#ffdbca",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#436182",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface-variant": "#434652",
+                        "on-primary-fixed-variant": "#2a4968",
+                        "background": "#f8f9fb",
+                        "secondary-container": "#fd7613",
+                        "on-secondary-fixed": "#331200",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#233841",
+                        "on-secondary-container": "#5b2500",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#3a4f59",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#cfe6f2"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .industrial-gradient {
+            background: linear-gradient(135deg, #163756 0%, #304e6e 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#163756]/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-2xl font-black tracking-tighter text-[#163756] dark:text-white uppercase font-headline">
+                ADR EXPERT
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#163756] dark:text-slate-300 font-medium hover:text-[#9c4400] transition-colors font-headline text-sm uppercase tracking-tight" href="#adr">Umowa ADR</a>
+<a class="text-[#163756] dark:text-slate-300 font-medium hover:text-[#9c4400] transition-colors font-headline text-sm uppercase tracking-tight" href="#dgsa">Obowiązki DGSA</a>
+<a class="text-[#163756] dark:text-slate-300 font-medium hover:text-[#9c4400] transition-colors font-headline text-sm uppercase tracking-tight" href="#oferta">Oferta</a>
+<a class="text-[#163756] dark:text-slate-300 font-medium hover:text-[#9c4400] transition-colors font-headline text-sm uppercase tracking-tight" href="#o-mnie">O mnie</a>
+<a class="text-[#163756] dark:text-slate-300 font-medium hover:text-[#9c4400] transition-colors font-headline text-sm uppercase tracking-tight" href="#kontakt">Kontakt</a>
+<a class="ml-4 px-6 py-2.5 industrial-gradient text-white rounded-md font-headline font-bold text-sm uppercase tracking-wider scale-95 active:opacity-80 transition-transform" href="#kontakt">Konsultacja</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="bg-gradient-to-r from-transparent via-[#e0e3e5] to-transparent h-[1px] absolute bottom-0 w-full"></div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Main hero banner" class="w-full h-full object-cover" data-alt="Industrial truck transporting dangerous chemical goods safely at night" src="/assets/img/hero.png"/>
+<div class="absolute inset-0 bg-primary/40 backdrop-brightness-75"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary text-white rounded-sm font-label text-xs font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+                    Bezpieczeństwo ADR
+                </div>
+<h1 class="text-6xl md:text-8xl font-black font-headline text-white leading-[0.9] tracking-tighter">
+                    ADR EXPERT<br/>
+<span class="text-secondary-fixed">Waldemar Stolarski</span>
+</h1>
+<p class="text-xl md:text-2xl text-white/90 font-light max-w-xl leading-relaxed">
+                    Doradztwo DGSA, Bezpieczeństwo i Precyzja w Transporcie Materiałów Niebezpiecznych.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 industrial-gradient text-white font-headline font-extrabold uppercase tracking-widest rounded-lg shadow-2xl">
+                        Sprawdź Ofertę
+                    </button>
+<button class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-headline font-extrabold uppercase tracking-widest rounded-lg hover:bg-white/20 transition-all">
+                        Kontakt DGSA
+                    </button>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="glass-panel p-8 rounded-xl border border-white/20 shadow-2xl space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-primary/60">Certyfikowany Doradca</p>
+<p class="font-headline font-bold text-primary">Uprawnienia DGSA</p>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant/30"></div>
+<p class="font-body text-primary/80 leading-relaxed italic">
+                        "Zapewniam pełną zgodność z rygorystycznymi przepisami umowy ADR, minimalizując ryzyko operacyjne i prawne Twojego przedsiębiorstwa."
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Umowa ADR Section -->
+<section class="py-24 bg-surface" id="adr">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-4 sticky top-32">
+<h2 class="text-4xl font-black font-headline text-primary tracking-tighter mb-6 uppercase">Umowa ADR</h2>
+<div class="w-20 h-2 bg-secondary mb-8"></div>
+<p class="font-label text-sm text-outline leading-loose tracking-wide">
+                        PODSTAWY PRAWNE I STANDARDY MIĘDZYNARODOWE
+                    </p>
+</div>
+<div class="lg:col-span-8 space-y-10">
+<div class="p-10 bg-surface-container-lowest rounded-xl shadow-sm border-l-4 border-primary">
+<p class="text-lg leading-relaxed text-on-surface mb-6">
+                            Umowa europejska dotycząca międzynarodowego przewozu drogowego towarów niebezpiecznych (ADR) została sporządzona w Genewie dnia 30 września 1957 r. Polska ratyfikowała ją w 1975 r.
+                        </p>
+<p class="text-lg leading-relaxed text-on-surface">
+                            Głównym celem umowy jest zwiększenie bezpieczeństwa przewozu towarów niebezpiecznych oraz ujednolicenie przepisów dotyczących ich transportu na terenie całej Europy. Przepisy ADR są nowelizowane co dwa lata, aby nadążyć za postępem technicznym i nowymi zagrożeniami.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">local_shipping</span>
+<h4 class="font-headline font-bold text-primary mb-2">Transport</h4>
+<p class="text-sm text-outline">Standardy pakowania i załadunku towarów.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">description</span>
+<h4 class="font-headline font-bold text-primary mb-2">Dokumentacja</h4>
+<p class="text-sm text-outline">Wymagane listy przewozowe i instrukcje.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">school</span>
+<h4 class="font-headline font-bold text-primary mb-2">Szkolenia</h4>
+<p class="text-sm text-outline">Obowiązkowe kursy dla kierowców i personelu.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Doradca DGSA Section -->
+<section class="py-24 bg-surface-container-low overflow-hidden relative" id="dgsa">
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="bg-primary p-12 lg:p-20 rounded-2xl text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 p-12 opacity-10">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">gavel</span>
+</div>
+<div class="max-w-3xl space-y-8">
+<h2 class="text-4xl md:text-5xl font-black font-headline tracking-tighter uppercase leading-none">
+                        Doradca DGSA:<br/>Wymóg Prawny i Bezpieczeństwo
+                    </h2>
+<div class="space-y-6 text-lg text-on-primary-container leading-relaxed">
+<p>
+                            Zgodnie z ustawą o przewozie towarów niebezpiecznych, każdy przedsiębiorca uczestniczący w operacjach transportowych (pakowanie, załadunek, napełnianie, przewóz) <span class="text-secondary-fixed font-bold underline underline-offset-4">ma obowiązek wyznaczenia doradcy ds. bezpieczeństwa (DGSA)</span>.
+                        </p>
+<p>
+                            Brak wyznaczonego doradcy grozi wysokimi karami finansowymi nakładanymi przez ITD oraz zwiększa ryzyko wystąpienia poważnych incydentów, które mogą rzutować na przyszłość firmy.
+                        </p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 pt-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">assignment_late</span>
+<div>
+<h4 class="font-headline font-bold text-white uppercase text-sm tracking-widest">Kary ITD</h4>
+<p class="text-xs text-on-primary-container">Do 5000 PLN za brak rocznego sprawozdania.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">report_problem</span>
+<div>
+<h4 class="font-headline font-bold text-white uppercase text-sm tracking-widest">Odpowiedzialność</h4>
+<p class="text-xs text-on-primary-container">Ryzyko utraty licencji transportowej.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Oferta Section (Bento Grid) - Moved above 'O Mnie' -->
+<section class="py-24 bg-surface-container-high" id="oferta">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl md:text-5xl font-black font-headline text-primary tracking-tighter uppercase">Nasza Oferta</h2>
+<p class="text-outline max-w-2xl mx-auto">Kompleksowe wsparcie dla firm transportowych, spedycyjnych i produkcyjnych w zakresie ADR.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6">
+<!-- Sprawozdania -->
+<div class="md:col-span-3 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assessment</span>
+</div>
+<h3 class="text-xl font-bold font-headline text-primary mb-4 uppercase">Sprawozdania Roczne</h3>
+<p class="text-sm text-outline leading-relaxed">Sporządzanie obowiązkowych rocznych sprawozdań z przewozu towarów niebezpiecznych do Wojewódzkiego Inspektoratu Transportu Drogowego.</p>
+</div>
+<!-- Audyty -->
+<div class="md:col-span-3 lg:col-span-4 bg-primary p-8 rounded-xl text-white relative overflow-hidden">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-white/10 text-white rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-4 uppercase">Audyty Zgodności</h3>
+<p class="text-sm text-on-primary-container leading-relaxed">Regularne kontrole w siedzibie klienta, weryfikacja procedur załadunkowych i dokumentacji pod kątem zgodności z aktualną umową ADR.</p>
+</div>
+</div>
+<!-- Szkolenia -->
+<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-secondary/10 text-secondary rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<h3 class="text-xl font-bold font-headline text-primary mb-4 uppercase">Szkolenia Ogólne</h3>
+<p class="text-sm text-outline leading-relaxed">Prowadzenie szkoleń stanowiskowych dla personelu pomocniczego, magazynierów oraz kierowców w zakresie procedur bezpieczeństwa.</p>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/20 flex gap-2">
+<span class="px-2 py-1 bg-surface-container text-primary font-label text-[10px] uppercase font-bold rounded">Magazyn</span>
+<span class="px-2 py-1 bg-surface-container text-primary font-label text-[10px] uppercase font-bold rounded">Biuro</span>
+</div>
+</div>
+<!-- Doradztwo -->
+<div class="md:col-span-4 lg:col-span-8 bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<div class="w-12 h-12 bg-tertiary/10 text-tertiary rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">contact_support</span>
+</div>
+<h3 class="text-xl font-bold font-headline text-primary mb-4 uppercase">Bieżące Doradztwo</h3>
+<p class="text-sm text-outline leading-relaxed">Stałe wsparcie telefoniczne i mailowe w zakresie klasyfikacji towarów, doboru opakowań oraz oznakowania jednostek transportowych.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg">
+<h4 class="font-headline font-bold text-primary mb-2 text-sm uppercase tracking-wider">Dodatkowe Usługi:</h4>
+<ul class="space-y-2 text-xs text-outline font-medium">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Sporządzanie planów ochrony</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Analiza powypadkowa</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Doradztwo w doborze wyposażenia</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ADR Class Chips -->
+<div class="md:col-span-2 lg:col-span-4 bg-secondary text-white p-8 rounded-xl flex items-center justify-center text-center">
+<div class="space-y-4">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] font-bold">Obsługiwane Towary</p>
+<p class="text-2xl font-black font-headline">Wszystkie klasy towarów niebezpiecznych 1-9</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- O Mnie Section -->
+<section class="py-24 bg-surface-container-lowest" id="o-mnie">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-square bg-surface-container rounded-2xl overflow-hidden shadow-2xl">
+<img alt="Waldemar Stolarski Profile" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Portrait of professional ADR consultant Waldemar Stolarski" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOr7ysPXh-wIycFNN6sva0PZvmGzSqWxqyL5_Tl2xNlpKYBK-ad4lcqWZdCAKDZyqiB0K7CXraTA2bvUfyCpLYXtW-MoaVacyayd7K_Eu7zZAvEn6qaP9Tcs485cEHFv5AM7C8onN-946iSzEWu6IrMzyL-Us5pzBSmBBxjrXPy1eqi2K7p5kt9opDlf0oX66af8gsaPoCmcz91Y7Z28dnkS3PILBAUEuqNLW4Vyn5LOzhfYMs8ZkiokdlD663Z7ijBk6SA5dDxzVw"/>
+</div>
+<div class="absolute -bottom-6 -right-6 p-8 bg-secondary text-white rounded-lg shadow-xl hidden md:block">
+<p class="text-4xl font-black font-headline">10+</p>
+<p class="text-xs font-label uppercase tracking-widest">Lat Doświadczenia</p>
+</div>
+</div>
+<div class="space-y-8">
+<div>
+<h2 class="text-4xl font-black font-headline text-primary tracking-tighter mb-2 uppercase">Waldemar Stolarski</h2>
+<p class="text-secondary font-label font-bold uppercase tracking-widest">Ekspert ADR / Doradca DGSA</p>
+</div>
+<p class="text-lg text-on-surface leading-relaxed">
+                    Jestem certyfikowanym doradcą DGSA z ponad 10-letnim doświadczeniem w branży transportowej i logistycznej. Moja praca to nie tylko wypełnianie formalności, to przede wszystkim dbanie o życie ludzkie i środowisko naturalne poprzez rygorystyczne przestrzeganie procedur ADR.
+                </p>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex items-center gap-4 p-4 border-b border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-body font-medium">Certyfikat Doradcy wydany przez TDT</span>
+</div>
+<div class="flex items-center gap-4 p-4 border-b border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="font-body font-medium">Specjalizacja w raportowaniu rocznym</span>
+</div>
+<div class="flex items-center gap-4 p-4">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+<span class="font-body font-medium">Szkolenia stanowiskowe ADR</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Kontakt Section -->
+<section class="py-24 bg-surface-container-lowest" id="kontakt">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div class="space-y-12">
+<div>
+<h2 class="text-4xl font-black font-headline text-primary tracking-tighter mb-6 uppercase">Skontaktuj się z nami</h2>
+<p class="text-outline text-lg">Zapewnij swojej firmie bezpieczeństwo i spokój podczas kontroli ITD.</p>
+</div>
+<div class="space-y-8">
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-surface-container-low rounded-full flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined text-2xl">call</span>
+</div>
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-outline">Telefon bezpośredni</p>
+<p class="text-xl font-headline font-extrabold text-primary">609-319-887</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-surface-container-low rounded-full flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-outline">Adres E-mail</p>
+<p class="text-xl font-headline font-extrabold text-primary">kontakt@ekspertadr.pl</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-surface-container-low rounded-full flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-outline">Biuro / Adres</p>
+<p class="text-xl font-headline font-extrabold text-primary leading-tight">Ul. Przemkowska 16,<br/>54-430 Wrocław</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-lg border border-outline-variant/30">
+<p class="font-label text-[10px] uppercase font-black text-primary mb-4 tracking-widest">Dane Rejestrowe Firmy</p>
+<div class="grid grid-cols-2 gap-4 text-xs font-body text-outline">
+<p>NIP: 8942358941</p>
+<p>REGON: 932974852</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-1 lg:p-4 shadow-2xl">
+<div class="w-full h-full min-h-[500px] bg-outline-variant/20 rounded-xl overflow-hidden grayscale contrast-125">
+<img alt="Map Location" class="w-full h-full object-cover" data-alt="Map showing office location in Wroclaw Poland" data-location="Wrocław" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2dlXr1d82d8Fl2RLvqqHLJeBC3YIQyQ1Bl6Hn9ZCDDDdiUG55Yz3FTRXXPHBVQQplhYTsByr9Bh8Qj161aCPCJZDt2l_RFzuVkcTV7WVdkjqsXeDrAeboqIVj_IaINctHUDK7SoUa9snvVCrug8-LfEgtf8M91I644pqFwDwnQH7TKeVaEcjKjW_GgYzUeqU5uZokTFwgslGYIHwv010yWLSG9opB9vT0cO40_LiwvyMBBlUQPLVRbHHxP9imVxxkDouklySr10m5"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#163756] dark:bg-[#0a1d2e] w-full py-12 px-6 border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-center max-w-7xl mx-auto gap-8">
+<div class="text-xl font-bold text-white tracking-tight font-headline uppercase">
+                ADR EXPERT
+            </div>
+<div class="text-white text-sm text-slate-300 font-body">
+                © 2024 ADR Expert. Bezpieczeństwo i Precyzja w Transporcie Materiałów Niebezpiecznych.
+            </div>
+<div class="flex flex-wrap gap-6">
+<a class="text-slate-400 hover:text-white hover:underline decoration-[#9c4400] underline-offset-4 font-body text-sm transition-opacity opacity-90 hover:opacity-100" href="#">Polityka Prywatności</a>
+<a class="text-slate-400 hover:text-white hover:underline decoration-[#9c4400] underline-offset-4 font-body text-sm transition-opacity opacity-90 hover:opacity-100" href="#">Regulamin</a>
+<a class="text-slate-400 hover:text-white hover:underline decoration-[#9c4400] underline-offset-4 font-body text-sm transition-opacity opacity-90 hover:opacity-100" href="#">Certyfikacja ADR</a>
+<a class="text-slate-400 hover:text-white hover:underline decoration-[#9c4400] underline-offset-4 font-body text-sm transition-opacity opacity-90 hover:opacity-100" href="#">Kontakt Alarmowy</a>
+</div>
+</div>
+</footer>
+</body></html>
